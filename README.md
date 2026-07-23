@@ -1,5 +1,7 @@
 # Muhammad Arslan Anwer — Portfolio
 
+[![CI/CD](https://github.com/chshani786/My-Portfolio/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/chshani786/My-Portfolio/actions/workflows/ci-cd.yml)
+
 Personal portfolio site for **Muhammad Arslan Anwer**, Senior Full Stack Software Engineer. A single-page React application showcasing skills, tools, featured projects, work experience, and a working contact form powered by EmailJS.
 
 ## ✨ Features
