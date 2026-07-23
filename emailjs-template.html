@@ -1,0 +1,95 @@
+<!--
+  EmailJS contact-form template for the portfolio.
+
+  HOW TO USE
+  1. EmailJS dashboard → Email Templates → your template → "Edit Content" → switch to the
+     HTML / code view and paste EVERYTHING below the comment block.
+  2. Set these fields in the right-side panel:
+       Subject   : New message from {{from_name}} — {{subject}}
+       To Email  : arslan.anwer778@gmail.com
+       From Name : {{from_name}}
+       Reply To  : {{from_email}}
+  3. Save. The variables ({{from_name}}, {{from_email}}, {{subject}}, {{message}}, {{time}})
+     are all sent by src/pages/home/components/Contact.tsx.
+-->
+<div style="margin:0;padding:0;background-color:#f4f5f7;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f5f7;padding:24px 0;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.08);">
+
+          <!-- Header -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);padding:28px 32px;">
+              <div style="color:#ffffff;font-size:20px;font-weight:700;letter-spacing:-0.3px;">
+                📬 New Portfolio Message
+              </div>
+              <div style="color:rgba(255,255,255,0.75);font-size:13px;margin-top:4px;">
+                Someone reached out through your portfolio site
+              </div>
+            </td>
+          </tr>
+
+          <!-- Sender card -->
+          <tr>
+            <td style="padding:28px 32px 8px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="vertical-align:top;width:56px;">
+                    <div style="width:44px;height:44px;line-height:44px;text-align:center;background-color:#eef2ff;border-radius:50%;font-size:22px;">
+                      👤
+                    </div>
+                  </td>
+                  <td style="vertical-align:top;padding-left:12px;">
+                    <div style="color:#111827;font-size:16px;font-weight:600;">{{from_name}}</div>
+                    <div style="font-size:13px;margin-top:2px;">
+                      <a href="mailto:{{from_email}}" style="color:#4f46e5;text-decoration:none;">{{from_email}}</a>
+                    </div>
+                    <div style="color:#9ca3af;font-size:12px;margin-top:2px;">{{time}}</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Subject -->
+          <tr>
+            <td style="padding:16px 32px 0 32px;">
+              <div style="color:#6b7280;font-size:11px;text-transform:uppercase;letter-spacing:0.6px;font-weight:600;">Subject</div>
+              <div style="color:#111827;font-size:15px;font-weight:600;margin-top:4px;">{{subject}}</div>
+            </td>
+          </tr>
+
+          <!-- Message -->
+          <tr>
+            <td style="padding:20px 32px 28px 32px;">
+              <div style="color:#6b7280;font-size:11px;text-transform:uppercase;letter-spacing:0.6px;font-weight:600;margin-bottom:8px;">Message</div>
+              <div style="background-color:#f9fafb;border:1px solid #eef0f3;border-left:3px solid #4f46e5;border-radius:8px;padding:16px 18px;color:#374151;font-size:15px;line-height:1.6;white-space:pre-wrap;">{{message}}</div>
+            </td>
+          </tr>
+
+          <!-- Reply button -->
+          <tr>
+            <td style="padding:0 32px 32px 32px;">
+              <a href="mailto:{{from_email}}?subject=Re:%20{{subject}}" style="display:inline-block;background-color:#4f46e5;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;padding:11px 22px;border-radius:8px;">
+                Reply to {{from_name}} &rarr;
+              </a>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#f9fafb;border-top:1px solid #eef0f3;padding:18px 32px;">
+              <div style="color:#9ca3af;font-size:12px;line-height:1.5;">
+                Sent automatically from your
+                <span style="color:#6b7280;font-weight:600;">portfolio contact form</span>.
+                Reply directly to this email to respond to {{from_name}}.
+              </div>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
