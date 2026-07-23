@@ -1,20 +1,8 @@
 import { FC, ReactNode } from "react";
-import { Switch } from "@/components/ui/switch.tsx";
-import {
-    Moon,
-    Sun,
-    Terminal,
-    Computer,
-    Menu,
-    LucideIcon,
-    Monitor,
-} from "lucide-react";
+import { Moon, Sun, Menu, LucideIcon, Monitor } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet.tsx";
 import { Button } from "@/components/ui/button.tsx";
-import {
-    ThemeProvider,
-    useTheme,
-} from "@/components/ui/contexts/theme-provider.tsx";
+import { useTheme } from "@/components/ui/contexts/theme-provider.tsx";
 import { useApp } from "@/pages/utils/AppContext.tsx";
 import {
     DropdownMenu,
@@ -61,14 +49,9 @@ const ThemeSwitcher: FC = () => {
 };
 
 export const Header: FC = () => {
-    const { theme, setTheme } = useTheme();
-
     const {
         profile: { name },
     } = useApp();
-    const toggleTheme = () => {
-        setTheme(theme === "light" ? "dark" : "light");
-    };
 
     const navItems = [
         { name: "About", href: "#about" },

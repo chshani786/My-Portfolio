@@ -94,9 +94,39 @@ src/
 
 Profile content (name, contact, social links) lives in [`src/pages/utils/AppContext.tsx`](./src/pages/utils/AppContext.tsx). Projects, skills, tools, and experience are defined in their respective component files under `src/pages/home/components/`.
 
-## 🌐 Deployment
+## 🌐 Deployment & CI/CD
 
-Build with `npm run build` and deploy the `dist/` folder to any static host (Vercel, Netlify, GitHub Pages, Cloudflare Pages). Remember to configure the `VITE_EMAILJS_*` environment variables on the host.
+Deployment is automated to **Netlify** via GitHub Actions
+([`.github/workflows/ci-cd.yml`](./.github/workflows/ci-cd.yml)):
+
+- **Every push / PR** → install, lint, type-check, and build (the CI gate)
+- **Push to `main`** → production deploy
+- **Pull requests** → Netlify preview deploy
+
+Build settings (publish dir, SPA redirect, cache & security headers) live in
+[`netlify.toml`](./netlify.toml).
+
+### One-time setup
+
+1. Create an empty site in Netlify (do **not** connect it to Git — Actions drives the deploys).
+2. Grab your **Site ID** (Site settings → General) and a **personal access token**
+   (User settings → Applications → New access token).
+3. In GitHub → **Settings → Secrets and variables → Actions**, add these repository secrets:
+
+   | Secret | Value |
+   |--------|-------|
+   | `NETLIFY_AUTH_TOKEN` | your Netlify personal access token |
+   | `NETLIFY_SITE_ID` | the Netlify site ID |
+   | `VITE_EMAILJS_PUBLIC_KEY` | EmailJS public key |
+   | `VITE_EMAILJS_SERVICE_ID` | EmailJS service ID |
+   | `VITE_EMAILJS_TEMPLATE_ID` | EmailJS template ID |
+
+The `VITE_EMAILJS_*` values are needed at **build time** (Vite inlines them), which is
+why they're GitHub secrets rather than Netlify UI variables.
+
+> Prefer Netlify's own Git integration instead? Connect the repo in Netlify and set the
+> three `VITE_EMAILJS_*` values under Site settings → Environment variables. In that case,
+> remove the deploy steps from the workflow (keep only lint + build as CI).
 
 ## 📄 License
 

@@ -15,8 +15,12 @@ export default tseslint.config(
             globals: globals.browser,
         },
         plugins: {
+            react,
             "react-hooks": reactHooks,
             "react-refresh": reactRefresh,
+        },
+        settings: {
+            react: { version: "detect" },
         },
         rules: {
             ...reactHooks.configs.recommended.rules,
@@ -26,6 +30,12 @@ export default tseslint.config(
                 "warn",
                 { allowConstantExport: true },
             ],
+            // Apostrophes/quotes in JSX text are fine — this rule is purely cosmetic.
+            "react/no-unescaped-entities": "off",
+            // React 17+ automatic JSX runtime: no need to import React in scope.
+            "react/react-in-jsx-scope": "off",
+            // TypeScript handles prop typing — PropTypes are redundant here.
+            "react/prop-types": "off",
         },
     },
 );
