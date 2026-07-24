@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button.tsx";
 import { useApp } from "@/pages/utils/AppContext.tsx";
 import { HackerRankIcon } from "@/components/HackerRankIcon.tsx";
+import { UpworkIcon } from "@/components/UpworkIcon.tsx";
 import { useVisitorCount, formatCount } from "@/hooks/useVisitorCount.ts";
 
 export const Banner: FC = () => {
@@ -29,6 +30,7 @@ export const Banner: FC = () => {
         facebook: Facebook,
         whatsapp: MessageCirclePlus,
         hackerrank: HackerRankIcon,
+        upwork: UpworkIcon,
     };
 
     return (

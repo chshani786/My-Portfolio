@@ -67,6 +67,11 @@ export function AppProvider({ children, ...props }: AppProviderProps) {
                     url: "https://www.hackerrank.com/arslan_anwer778",
                     icon: "hackerrank",
                 },
+                {
+                    name: "Upwork",
+                    url: "https://www.upwork.com/freelancers/~01fc65ca19a7edd487",
+                    icon: "upwork",
+                },
             ],
             langs: ["JavaScript", "TypeScript"],
             frameworks: ["Node.js", "React.js", "Vue.js"],

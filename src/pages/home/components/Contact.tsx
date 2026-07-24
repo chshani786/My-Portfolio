@@ -24,6 +24,7 @@ import {
     Twitter,
 } from "lucide-react";
 import { HackerRankIcon } from "@/components/HackerRankIcon.tsx";
+import { UpworkIcon } from "@/components/UpworkIcon.tsx";
 import { SectionTitle } from "@/components/SectionTitle.tsx";
 import { useApp } from "@/pages/utils/AppContext.tsx";
 
@@ -102,6 +103,7 @@ export const Contact: FC = () => {
         facebook: Facebook,
         whatsapp: MessageCirclePlus,
         hackerrank: HackerRankIcon,
+        upwork: UpworkIcon,
     };
 
     return (
