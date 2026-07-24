@@ -75,7 +75,12 @@ export const Contact: FC = () => {
 
         const params = {
             from_name: name,
+            // Sender's address under the common EmailJS variable names so the
+            // template's "To Email" / "Reply To" resolves regardless of which
+            // it references ({{from_email}}, {{email}} or {{reply_to}}).
             from_email: senderEmail,
+            email: senderEmail,
+            reply_to: senderEmail,
             subject: subject || `Portfolio contact from ${name}`,
             message,
             time: new Date().toLocaleString(),
