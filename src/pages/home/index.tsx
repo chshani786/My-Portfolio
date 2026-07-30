@@ -9,6 +9,7 @@ const AboutMe = lazy(() => import("@/pages/home/components/AboutMe.tsx"));
 const Skills = lazy(() => import("@/pages/home/components/Skills.tsx"));
 const Projects = lazy(() => import("@/pages/home/components/Projects.tsx"));
 const Experience = lazy(() => import("@/pages/home/components/Experience.tsx"));
+const Education = lazy(() => import("@/pages/home/components/Education.tsx"));
 const Contact = lazy(() => import("@/pages/home/components/Contact.tsx"));
 // const Header = lazy(() => import("@/pages/home/components/Header.tsx"));
 import { Header } from "@/pages/home/components/Header";
@@ -50,6 +51,9 @@ export default function Home() {
 
                     {/* Experience */}
                     <Experience />
+
+                    {/* Education */}
+                    <Education />
 
                     {/* Contact */}
                     <Contact />

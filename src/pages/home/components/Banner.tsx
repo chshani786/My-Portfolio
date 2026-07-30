@@ -11,12 +11,15 @@ import {
     MessageCirclePlus,
     MapPin,
     Sparkles,
+    Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { useApp } from "@/pages/utils/AppContext.tsx";
 import { HackerRankIcon } from "@/components/HackerRankIcon.tsx";
 import { UpworkIcon } from "@/components/UpworkIcon.tsx";
 import { useVisitorCount, formatCount } from "@/hooks/useVisitorCount.ts";
+
+const RESUME_URL = "/Muhammad-Arslan-Anwer-Resume.pdf";
 
 export const Banner: FC = () => {
     const { profile: { name, role, headline, langs, frameworks, social, location } } = useApp();
@@ -46,7 +49,7 @@ export const Banner: FC = () => {
                             <Sparkles className="mr-2 h-4 w-4" />
                             Available for Freelance & Consulting
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        <h1 className="text-3xl md:text-4xl xl:text-5xl md:whitespace-nowrap font-bold mb-3 text-primary">
                             I'm {name}
                         </h1>
                         <p className="text-lg md:text-xl mb-1 font-semibold text-foreground/90">
@@ -94,6 +97,18 @@ export const Banner: FC = () => {
                                 >
                                     Get In Touch{" "}
                                     <Code2 className="ml-2 h-4 w-4" />
+                                </Button>
+                            </a>
+                            <a
+                                href={RESUME_URL}
+                                download="Muhammad-Arslan-Anwer-Resume.pdf"
+                            >
+                                <Button
+                                    variant="outline"
+                                    className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all"
+                                >
+                                    Download CV{" "}
+                                    <Download className="ml-2 h-4 w-4" />
                                 </Button>
                             </a>
                         </div>
